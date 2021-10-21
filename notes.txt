@@ -1,0 +1,7 @@
+#we could use json in sqlite3 
+#then we (de)serialize them into collections of 
+#objects and save this in a singleton catalog of all current data
+
+#json in sqlite3 https://devopsheaven.com/sqlite/databases/json/python/api/2017/10/11/sqlite-json-data-python.html
+#singleton in python https://www.tutorialspoint.com/python_design_patterns/python_design_patterns_singleton.htm
+#use case of singleton https://github.com/Lepkem/LibrarySystem/blob/e577ff6c7898f450bd03e3206460047ddaff7807/Library/LibraryStandard/Catalog.cs
