@@ -1,7 +1,7 @@
-import enum
+from enum import Enum
 from CeasarCypher import cypher
 
-class Role(enum):
+class Role(Enum):
     Advisor = 1
     SystemAdmin = 2
     SuperAdmin = 3
