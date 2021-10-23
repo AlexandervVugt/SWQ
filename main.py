@@ -1,5 +1,5 @@
 from typing import Tuple
-from classes.userAccount import UserAccount, Role
+from classes.db import User, Role
 from functionality import *
 
 user = None
@@ -19,7 +19,7 @@ def login():
     while user is None:
         creds = credentials_prompt()
         if creds[0] == "superadmin" and creds[1] == "Admin!23":
-            user = UserAccount("superadmin", "Admin!23", Role.SuperAdmin)
+            user = User(username="superadmin", password_hash="Admin!23", role=Role.SuperAdmin)
         else:
             pass #TODO: Implement creds checking in db
 
