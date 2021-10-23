@@ -15,6 +15,7 @@ def welcome():
     print("Welcome to the Clients Data Management System!")
 
 def login():
+    global user
     while user is None:
         creds = credentials_prompt()
         if creds[0] == "superadmin" and creds[1] == "Admin!23":
@@ -31,16 +32,18 @@ def credentials_prompt() -> Tuple:
 def action_prompt() -> bool:
     func = get_func()
     print("Please indicate the number of the action you want to perform, or 'q' to quit.")
-    for key, value in func:
+    for key, value in func.items():
         print(str(key), ":\t", value[1])
     choice = input("Number:\t")
     if choice == 'q':
         return True
     else:
         try:
-            choice = int(input("Number:\t"))
+            choice = int(choice)
             func[choice][0](user)   #Executes the chosen function
         except:
+            print("An error occured, please try again.")
+        finally:
             return False
 
 
