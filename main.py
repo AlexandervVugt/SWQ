@@ -12,7 +12,7 @@ def Main():
         quit = action_prompt()
 
 def welcome():
-    print("Welcome to the Clients Data Management System!")
+    print("Welcome to the Unique Meal member management system!")
 
 def login():
     global user
@@ -50,11 +50,11 @@ def action_prompt() -> bool:
 def get_func() -> dict:
     if user == None:
         raise PermissionError("This action is only allowed for logged in users.")
-    elif user._role == Role.Advisor:
-        return advisor_func
-    elif user._role == Role.SystemAdmin:
+    elif user._role == Role.CONSULTANT:
+        return consultant_func
+    elif user._role == Role.SYSTEM_ADMIN:
         return admin_func
-    elif user._role == Role.SuperAdmin:
+    elif user._role == Role.SUPER_ADMIN:
         return root_func
     else:
         raise RuntimeError("Unknown user role.")
