@@ -37,16 +37,3 @@ class LogEntryBuilder:
 
     def GetProduct(self):
         return self.product
-
-    def instant(username: str, description: str, info: str,
-        sus: bool, datetime: datetime = datetime.datetime.now()):
-        entry = LogEntryBuilder.LogEntry()
-        entry.number = LogEntryBuilder.LogEntry.__log_number
-        LogEntryBuilder.LogEntry.__log_number += 1
-        entry.username = username
-        entry.date = datetime.date
-        entry.time = datetime.time
-        entry.description = description
-        entry.info = info
-        entry.sus = sus
-        return entry
